@@ -27,7 +27,7 @@ public class BasicScrapper {
     public static ArrayList<String> scrape(String query) throws IOException {
         Document doc = Jsoup.connect("https://www.google.com/search?site=imghp&tbm=isch&source=hp&q=" + query + "&gws_rd=cr").userAgent("Mozilla/5.0").get();
         //above uses JSoup to connect to google and search for the given query
-        Elements elements = doc.select(".t0fcAb[src]");
+        Elements elements = doc.getElementsByClass("yWs4tf");
         //we select the class of what is the encrypted url???, I'm not too sure, but I found it is indeed the url for the image
         //and then we select the src argument, which is what points to the url of the image
 
